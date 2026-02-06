@@ -158,7 +158,9 @@ add_action(
 			content: "\f547";
 			margin-right: 4px;
 		}
-
+        body.block-editor-page .block-editor-inserter__block-patterns-tabs-container .block-editor-inserter__category-panel .block-editor-block-patterns-list__item{
+            height: auto;
+        }
 	</style>
 		<?php
 	}
