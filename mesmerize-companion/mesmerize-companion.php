@@ -6,7 +6,7 @@
  *
  * License: GPLv3 or later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
- * Version: 1.6.168
+ * Version: 1.6.173
  * Text Domain: mesmerize-companion
  */
 
@@ -21,11 +21,11 @@ if ( ! defined( 'MESMERIZE_COMPANION_PHP_VERSION' ) ) {
 }
 
 if ( ! defined( 'MESMERIZE_COMPANION_VERSION' ) ) {
-	define( 'MESMERIZE_COMPANION_VERSION', '1.6.168' );
+	define( 'MESMERIZE_COMPANION_VERSION', '1.6.173' );
 }
 
 function mesmerize_companion_php_version_notice() {     ?>
-	<div class="notice notice-alt notice-error notice-large">
+	<div class="mesmerize-notice notice notice-alt notice-error notice-large">
 		<h4><?php _e( 'Mesmerize Companion can not run!', 'mesmerize-companion' );// phpcs:ignore  WordPress.Security.EscapeOutput.OutputNotEscaped, 	WordPress.Security.EscapeOutput.UnsafePrintingFunction ?></h4>
 		<p>
 			<?php _e( 'You need to update your PHP version to use the <strong>Mesmerize Companion</strong>.', 'mesmerize-companion' );// phpcs:ignore 	WordPress.Security.EscapeOutput.UnsafePrintingFunction ?> <br />

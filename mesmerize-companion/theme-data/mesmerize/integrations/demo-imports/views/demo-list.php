@@ -58,7 +58,7 @@ if ( ! empty( $extemdthemes_theme_importer->import_files ) && isset( $_GET['impo
 ?>
 	
 	<?php if ( empty( $extemdthemes_theme_importer->import_files ) ) : ?>
-	<div class="notice  notice-info  is-dismissible">
+	<div class="mesmerize-notice notice  notice-info  is-dismissible">
 		<p><?php esc_html_e( 'There are no predefined import files available in this theme. Please upload the import files manually!', 'mesmerize-companion' ); ?></p>
 	</div>
 <?php endif; ?>

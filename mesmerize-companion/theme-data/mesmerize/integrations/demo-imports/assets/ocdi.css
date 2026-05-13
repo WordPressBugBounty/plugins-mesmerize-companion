@@ -172,6 +172,9 @@ p.ocdi__ajax-loader {
 
 .ocdi__gl-item-footer {
     height: 30px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
     margin: 0;
     padding: 10px;
     -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
@@ -190,15 +193,18 @@ h4.ocdi__gl-item-title {
 }
 
 .ocdi__gl-item-footer--with-preview h4.ocdi__gl-item-title {
-    width: calc(100% - 140px);
+    flex: 1;
 }
 
 .ocdi__gl-item-button {
     float: right;
 }
+.js-ocdi-gl-import-data {
+    order: 2;
+}
 
 .ocdi__gl-item-button + .ocdi__gl-item-button {
-    margin-right: 5px;
+    margin-right: 0px;
 }
 
 @media (max-width: 782px) {
