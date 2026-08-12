@@ -409,13 +409,15 @@ class Companion {
 		if ( is_array( $data ) ) {
 			$data = self::filterArrayDefaults( $data );
 		} else {
-			$data = str_replace( '[tag_companion_uri]', \Mesmerize\Companion::instance()->themeDataURL(), $data );
-			$data = str_replace( '[tag_theme_uri]', get_template_directory_uri(), $data );
+            if (is_string( $data )) {
+                $data = str_replace('[tag_companion_uri]', \Mesmerize\Companion::instance()->themeDataURL(), $data);
+                $data = str_replace('[tag_theme_uri]', get_template_directory_uri(), $data);
 
-			$data = str_replace( '[tag_companion_dir]', \Mesmerize\Companion::instance()->themeDataPath(), $data );
-			$data = str_replace( '[tag_theme_dir]', get_template_directory(), $data );
-			$data = str_replace( '[tag_style_uri]', get_stylesheet_directory_uri(), $data );
-		}
+                $data = str_replace('[tag_companion_dir]', \Mesmerize\Companion::instance()->themeDataPath(), $data);
+                $data = str_replace('[tag_theme_dir]', get_template_directory(), $data);
+                $data = str_replace('[tag_style_uri]', get_stylesheet_directory_uri(), $data);
+            }
+        }
 		if ( ! is_array( $originalData ) ) {
 			$defaults[ $originalData ] = $data;
 			update_option( 'mesmerize_companion_filtered_defaults', $defaults, false );
@@ -1016,7 +1018,7 @@ class Companion {
         if ( ! is_user_logged_in() || ! current_user_can( 'edit_theme_options' ) ) {
             die();
         }
-		$filter      = filter_input( INPUT_GET, 'filter', FILTER_SANITIZE_STRING );
+        $filter = isset( $_GET['filter'] ) ? sanitize_text_field( wp_unslash( $_GET['filter'] ) ) : null;
 		$filter      = trim( $filter );
 		$filterParts = explode( '.', $filter );
 
